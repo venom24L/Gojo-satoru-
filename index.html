@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>SATORU GOJO - THE STRONGEST</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=VT323&family=Syncopate:wght@700&display=swap');
+
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+    body {
+      margin: 0; padding: 15px; background: #000; color: #00ffff;
+      font-family: 'VT323', monospace; font-size: 1.2rem; min-height: 100vh; overflow-x: hidden;
+    }
+
+    body::before {
+      content: ""; position: fixed; inset: 0;
+      background: url('https://i.ibb.co/BH3PbswV/dc9924c96f5ecbf2bbf5182d6c50d840.jpg') center/cover no-repeat;
+      opacity: 0.15; z-index: -1;
+    }
+
+    .container {
+      max-width: 100%; margin: 0 auto; border: 1px solid #00cccc;
+      padding: 20px; background: rgba(0, 0, 0, 0.85);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.2); position: relative;
+    }
+
+    h1 { 
+      text-align: center; color: #fff; text-shadow: 0 0 10px #00ffff; 
+      font-size: 2.2rem; margin-bottom: 5px; font-family: 'Syncopate', sans-serif; 
+      letter-spacing: 2px;
+    }
+
+    .subtitle { text-align: center; color: #00cccc; font-size: 1.1rem; margin-bottom: 30px; letter-spacing: 2px; }
+
+    .file-header {
+      background: rgba(0, 255, 255, 0.1); padding: 10px; border-left: 5px solid #00ffff;
+      margin: 25px 0 15px; font-size: 1.3rem; color: #00e6e6; font-family: 'Syncopate', sans-serif;
+    }
+
+    /* --- Technical Color Themes --- */
+    /* BLUE */
+    .tech-blue { border: 1px solid #00d4ff !important; background: rgba(0, 212, 255, 0.05) !important; }
+    .tech-blue .technique-name { color: #00d4ff; text-shadow: 0 0 10px #00d4ff; }
+    .tech-blue p { color: #80eaff; line-height: 1.3; }
+    .tech-blue .usage-note { color: #00d4ff; text-shadow: 0 0 5px rgba(0, 212, 255, 0.5); }
+
+    /* RED */
+    .tech-red { border: 1px solid #ff0044 !important; background: rgba(255, 0, 68, 0.05) !important; }
+    .tech-red .technique-name { color: #ff0044; text-shadow: 0 0 10px #ff0044; }
+    .tech-red p { color: #ff80a2; line-height: 1.3; }
+    .tech-red .usage-note { color: #ff0044; text-shadow: 0 0 5px rgba(255, 0, 68, 0.5); }
+
+    /* PURPLE */
+    .tech-purple { border: 1px solid #bc13fe !important; background: rgba(188, 19, 254, 0.05) !important; }
+    .tech-purple .technique-name { color: #bc13fe; text-shadow: 0 0 10px #bc13fe; }
+    .tech-purple p { color: #d98dff; line-height: 1.3; }
+    .tech-purple .usage-note { color: #bc13fe; text-shadow: 0 0 5px rgba(188, 19, 254, 0.5); }
+
+    .technique { margin: 20px 0; padding: 15px; border-radius: 8px; transition: 0.3s; }
+    .technique:active { transform: scale(0.97); filter: brightness(1.5); }
+    .technique-name { font-size: 1.4rem; margin-bottom: 10px; font-family: 'Syncopate', sans-serif; }
+    
+    .usage-note { 
+      font-style: italic; font-size: 1rem; margin-top: 10px; display: block; 
+      border-top: 1px solid rgba(255,255,255,0.1); padding-top: 5px; font-weight: bold;
+    }
+    
+    img.tech-img { width: 100%; border-radius: 5px; margin-top: 10px; border: 1px solid currentColor; }
+
+    #domain-btn {
+      display: block; width: 100%; padding: 18px; background: transparent;
+      border: 2px solid #fff; color: #fff; font-family: 'Syncopate', sans-serif;
+      font-size: 1rem; cursor: pointer; margin-top: 30px; transition: 0.3s;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    #domain-content {
+      max-height: 0; overflow: hidden; transition: max-height 0.8s ease-in-out, opacity 0.5s;
+      opacity: 0; text-align: center; margin-top: 10px;
+    }
+    #domain-content.show { max-height: 1500px; opacity: 1; }
+
+    #flash { position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: 0; transition: 0.2s; }
+    .shake { animation: shake 0.15s infinite; }
+    @keyframes shake { 0% { transform: translate(3px,3px); } 100% { transform: translate(-3px,-3px); } }
+
+    footer { 
+      text-align: center; color: #008888; margin-top: 50px; 
+      border-top: 1px solid #004444; padding-top: 20px;
+      font-size: 1.1rem; letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="flash"></div>
+
+  <div class="container">
+    <h1>SATORU GOJO</h1>
+    <div class="subtitle">THE HONORED ONE ⚪</div>
+
+    <div class="file-header">FILE: SORCERER_001</div>
+    <div style="padding-left: 10px;">
+      <p>EYES: <span style="color:#fff">SIX EYES LINKED</span></p>
+      <p>STATUS: <span style="color:#fff">ACTIVE</span></p>
+    </div>
+
+    <div class="file-header">LIMITLESS TECHNIQUES</div>
+
+    <div class="technique tech-blue" onclick="playEffect('#00d4ff')">
+      <div class="technique-name">LAPSE: BLUE</div>
+      <p>Produced by amplifying the Limitless and cursed energy, creating a vacuum through a lapse in infinity. It forces the world itself to fill the negative space.</p>
+      <span class="usage-note">USAGE: Field control, high-speed attraction, and crushing high-density targets.</span>
+      <img class="tech-img" src="https://i.ibb.co/21YWb6T1/download.jpg">
+    </div>
+
+    <div class="technique tech-red" onclick="playEffect('#ff0044')">
+      <div class="technique-name">REVERSAL: RED</div>
+      <p>By using Reverse Cursed Technique to fuel the Limitless, Gojo creates a powerful repulsion force. This center of gravity emits a violent shockwave.</p>
+      <span class="usage-note">USAGE: Long-range destruction, counter-attacking, and explosive repulsion.</span>
+      <img class="tech-img" src="https://i.ibb.co/RTm7hg4f/cursed-technique-reversal-has-to-be-one-of-my-favorite-v0-pmurm8eb5irc1.jpg">
+    </div>
+
+    <div class="technique tech-purple" onclick="playEffect('#bc13fe')">
+      <div class="technique-name">HOLLOW: PURPLE</div>
+      <p>A secret technique that collides "Blue" and "Red". This creates an imaginary mass that rushes forth, erasing everything in its path from existence.</p>
+      <span class="usage-note">USAGE: Absolute termination. Used to erase Special Grade threats and landscapes instantly.</span>
+      <img class="tech-img" src="https://i.ibb.co/qFP1qQYd/5866bc4b6eb025df7c60ffd89375ecfb.jpg">
+    </div>
+
+    <button id="domain-btn" onclick="toggleDomain()">EXPAND DOMAIN</button>
+
+    <div id="domain-content">
+      <div class="file-header" style="color:#fff; border-color:#fff;">UNLIMITED VOID</div>
+      <p style="padding: 10px; font-size: 1.1rem; color: #fff;">The peak of jujutsu. Traps the target within the concept of infinity, forcing them to receive endless information.</p>
+      <img class="tech-img" src="https://i.ibb.co/XrRkX6Bv/d6fe2ad080e350136df855244205532e.jpg">
+      <p style="margin-top:20px; font-size: 1.8rem; color: #fff; text-shadow: 0 0 15px #fff;">"Nah, I'd win."</p>
+    </div>
+
+    <footer>
+      CREATED BY 𝑽𝑬𝑵𝑶𝑴 FOR THE STRONGEST 🖤
+    </footer>
+  </div>
+
+  <script>
+    function playEffect(color) {
+      const flash = document.getElementById('flash');
+      flash.style.background = color; flash.style.opacity = "0.4";
+      document.body.classList.add('shake');
+      if (navigator.vibrate) navigator.vibrate(50);
+      setTimeout(() => { flash.style.opacity = "0"; document.body.classList.remove('shake'); }, 200);
+    }
+
+    function toggleDomain() {
+      const content = document.getElementById('domain-content');
+      const btn = document.getElementById('domain-btn');
+      playEffect('#fff');
+      content.classList.toggle('show');
+      btn.innerText = content.classList.contains('show') ? "CLOSE VOID" : "EXPAND DOMAIN";
+    }
+  </script>
+</body>
+</html>
